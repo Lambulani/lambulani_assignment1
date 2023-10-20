@@ -33,19 +33,5 @@
     "title": "Data Science for Industry: Assignment 1",
     "section": "Conclusion",
     "text": "Conclusion\nThis paper studied the State of the Nation Addresses made by the previous six South African Presidents. Natural Language Processing (NLP) models were used to make predictions to classify sentences according to which president was the source of the sentence. The sentences were structured using the Bag of Words method. Feed Forward Neural networks performed best in terms of test accuracy, having a test accuracy of just around 0.5. Further studies could explore structuring the data as Term Frequency-Inverse Document Frequency format in order to obtain better predictions. This was not done in this paper due to computational limitations. Text mining and NLP can have very useful potential in speech classification,and reveal insights in the world of political communication.\n\n\nReferences\n\n\nAlshalan, Raghad, Hend Al-Khalifa, Duaa Alsaeed, Heyam Al-Baity, and Shahad Alshalan. 2020. “Detection of Hate Speech in Covid-19–Related Tweets in the Arab Region: Deep Learning and Topic Modeling Approach.” Journal of Medical Internet Research 22 (12): e22609.\n\n\nBoschee, Elizabeth, Premkumar Natarajan, and Ralph Weischedel. 2012. “Automatic Extraction of Events from Open Source Text for Predictive Forecasting.” In Handbook of Computational Approaches to Counterterrorism, 51–67. Springer.\n\n\nFiccadenti, Valerio, Roy Cerqueti, and Marcel Ausloos. 2019. “A Joint Text Mining-Rank Size Investigation of the Rhetoric Structures of the US Presidents’ Speeches.” Expert Systems with Applications 123: 127–42.\n\n\nFinity, Kevin, Ramit Garg, and Max McGaw. 2021. “A Text Analysis of the 2020 Us Presidential Election Campaign Speeches.” In 2021 Systems and Information Engineering Design Symposium (SIEDS), 1–6. IEEE.\n\n\nJin, Zhijing, and Rada Mihalcea. 2022. “Natural Language Processing for Policymaking.” In Handbook of Computational Social Science for Policy, 141–62. Springer International Publishing Cham.\n\n\nNivash, S, EN Ganesh, K Harisudha, and S Sreeram. 2022. “Extensive Analysis of Global Presidents’ Speeches Using Natural Language.” In Sentimental Analysis and Deep Learning: Proceedings of ICSADL 2021, 829–50. Springer.\n\n\nSchmidt, Anna, and Michael Wiegand. 2017. “A Survey on Hate Speech Detection Using Natural Language Processing.” In Proceedings of the Fifth International Workshop on Natural Language Processing for Social Media, 1–10. Valencia, Spain: Association for Computational Linguistics. https://doi.org/10.18653/v1/W17-1101.\n\n\n“State of the Nation Address.” n.d. https://www.gov.za/state-nation-address."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "bndlev001Assignment1",
-    "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
   }
 ]
