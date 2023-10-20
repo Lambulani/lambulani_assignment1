@@ -1,0 +1,228 @@
+{
+    "sources": [
+        {
+            "URL": "https://www.gov.za/state-nation-address",
+            "id": "sagov",
+            "keyword": "President,Parliament",
+            "note": "(accessed: 16.10.2023)",
+            "title": "State of the nation address",
+            "type": "webpage"
+        },
+        {
+            "author": [
+                {
+                    "family": "Nivash",
+                    "given": "S"
+                },
+                {
+                    "family": "Ganesh",
+                    "given": "EN"
+                },
+                {
+                    "family": "Harisudha",
+                    "given": "K"
+                },
+                {
+                    "family": "Sreeram",
+                    "given": "S"
+                }
+            ],
+            "container-title": "Sentimental analysis and deep learning: Proceedings of ICSADL 2021",
+            "id": "nivash2022extensive",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "page": "829-850",
+            "publisher": "Springer",
+            "title": "Extensive analysis of global presidents’ speeches using natural language",
+            "type": "paper-conference"
+        },
+        {
+            "author": [
+                {
+                    "family": "Ficcadenti",
+                    "given": "Valerio"
+                },
+                {
+                    "family": "Cerqueti",
+                    "given": "Roy"
+                },
+                {
+                    "family": "Ausloos",
+                    "given": "Marcel"
+                }
+            ],
+            "container-title": "Expert Systems with Applications",
+            "id": "ficcadenti2019joint",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "page": "127-142",
+            "publisher": "Elsevier",
+            "title": "A joint text mining-rank size investigation of the rhetoric structures of the US presidents’ speeches",
+            "type": "article-journal",
+            "volume": "123"
+        },
+        {
+            "author": [
+                {
+                    "family": "Finity",
+                    "given": "Kevin"
+                },
+                {
+                    "family": "Garg",
+                    "given": "Ramit"
+                },
+                {
+                    "family": "McGaw",
+                    "given": "Max"
+                }
+            ],
+            "container-title": "2021 systems and information engineering design symposium (SIEDS)",
+            "id": "finity2021text",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "page": "1-6",
+            "publisher": "IEEE",
+            "title": "A text analysis of the 2020 us presidential election campaign speeches",
+            "type": "paper-conference"
+        },
+        {
+            "author": [
+                {
+                    "family": "Jin",
+                    "given": "Zhijing"
+                },
+                {
+                    "family": "Mihalcea",
+                    "given": "Rada"
+                }
+            ],
+            "container-title": "Handbook of computational social science for policy",
+            "id": "jin2022natural",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "page": "141-162",
+            "publisher": "Springer International Publishing Cham",
+            "title": "Natural language processing for policymaking",
+            "type": "chapter"
+        },
+        {
+            "DOI": "10.18653/v1/W17-1101",
+            "URL": "https://aclanthology.org/W17-1101",
+            "author": [
+                {
+                    "family": "Schmidt",
+                    "given": "Anna"
+                },
+                {
+                    "family": "Wiegand",
+                    "given": "Michael"
+                }
+            ],
+            "container-title": "Proceedings of the fifth international workshop on natural language processing for social media",
+            "id": "schmidt-wiegand-2017-survey",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017,
+                        4
+                    ]
+                ]
+            },
+            "page": "1-10",
+            "publisher": "Association for Computational Linguistics",
+            "publisher-place": "Valencia, Spain",
+            "title": "A survey on hate speech detection using natural language processing",
+            "type": "paper-conference"
+        },
+        {
+            "author": [
+                {
+                    "family": "Alshalan",
+                    "given": "Raghad"
+                },
+                {
+                    "family": "Al-Khalifa",
+                    "given": "Hend"
+                },
+                {
+                    "family": "Alsaeed",
+                    "given": "Duaa"
+                },
+                {
+                    "family": "Al-Baity",
+                    "given": "Heyam"
+                },
+                {
+                    "family": "Alshalan",
+                    "given": "Shahad"
+                }
+            ],
+            "container-title": "Journal of Medical Internet Research",
+            "id": "alshalan2020detection",
+            "issue": "12",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "page": "e22609",
+            "publisher": "JMIR Publications Toronto, Canada",
+            "title": "Detection of hate speech in covid-19–related tweets in the arab region: Deep learning and topic modeling approach",
+            "title-short": "Detection of hate speech in covid-19–related tweets in the arab region",
+            "type": "article-journal",
+            "volume": "22"
+        },
+        {
+            "author": [
+                {
+                    "family": "Boschee",
+                    "given": "Elizabeth"
+                },
+                {
+                    "family": "Natarajan",
+                    "given": "Premkumar"
+                },
+                {
+                    "family": "Weischedel",
+                    "given": "Ralph"
+                }
+            ],
+            "container-title": "Handbook of computational approaches to counterterrorism",
+            "id": "boschee2012automatic",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "page": "51-67",
+            "publisher": "Springer",
+            "title": "Automatic extraction of events from open source text for predictive forecasting",
+            "type": "chapter"
+        }
+    ],
+    "project_biblios": []
+}
