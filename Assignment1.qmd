@@ -11,7 +11,7 @@ execute:
   echo: false
 ---
 
-## Introduction 
+## Introduction
 
 The State of the Nation Address (SONA) is an annual event in South Africa where the President addresses the nation, providing a comprehensive overview of the country's political, social, and economic landscape[@sagov].SONA speeches are pivotal moments that set the direction for policy and reform, and they also serve as historical records of each presidency. In this context, this research endeavors to construct predictive models to determine which South African president delivered a particular sentence from a SONA speech.
 
@@ -19,18 +19,15 @@ The ability to attribute sentences to specific presidents within SONA speeches c
 
 ## Literature Review
 
-Recently, [@nivash2022extensive] studied several presidential speeches from 1970 to 2019, using classificaition models such as Naive Bayes to predict sentiment based off the speeches.Also [@ficcadenti2019joint] combines text mining and rank-size analysis to explore the structures and word distributions within US presidential speeches. Authors [@finity2021text] implemeneted Natural Language Processing techniques to study things like sentiment and topic variance on speeches made by a few candidates of the 2020 US presidential elections. In [@jin2022natural] suggests NLP methods, including text classification and topic modelling, investigate policy making decisions and their effects on the public. A paper by [@schmidt-wiegand-2017-survey] highlights the use of Support Vector Machinees(SVM) in detecting hate speech. In [@alshalan2020detection] used Convolutional Neural Networks(CNNs) to classificaiton of  hate speech in tweets during the COVID-19 pandemic. In their paper, [@boschee2012automatic] showed that using Natural Language Processing methods for prediction forecasting of events yielded better accuracy than other methods employed. 
+Recently, [@nivash2022extensive] studied several presidential speeches from 1970 to 2019, using classificaition models such as Naive Bayes to predict sentiment based off the speeches.Also [@ficcadenti2019joint] combines text mining and rank-size analysis to explore the structures and word distributions within US presidential speeches. Authors [@finity2021text] implemeneted Natural Language Processing techniques to study things like sentiment and topic variance on speeches made by a few candidates of the 2020 US presidential elections. In [@jin2022natural] suggests NLP methods, including text classification and topic modelling, investigate policy making decisions and their effects on the public. A paper by [@schmidt-wiegand-2017-survey] highlights the use of Support Vector Machinees(SVM) in detecting hate speech. In [@alshalan2020detection] used Convolutional Neural Networks(CNNs) to classificaiton of hate speech in tweets during the COVID-19 pandemic. In their paper, [@boschee2012automatic] showed that using Natural Language Processing methods for prediction forecasting of events yielded better accuracy than other methods employed.
 
-## Data and Methodology 
+## Data and Methodology
 
-### Data Preprocessing 
+### Data Preprocessing
 
-The full text of State of the Nation Address (SONA) speeches, from 1994 to 2023, was collected from the official South African Governement website[@sagov] Data preprocessing constitutes a critical step in text analysis, with the primary goal of converting unprocessed textual data into a well-structured format conducive to in-depth analysis of the speeches. In this context, we opted for the 'tidytext' package within the R programming language. 
+The full text of State of the Nation Address (SONA) speeches, from 1994 to 2023, was collected from the official South African Governement website[@sagov] Data preprocessing constitutes a critical step in text analysis, with the primary goal of converting unprocessed textual data into a well-structured format conducive to in-depth analysis of the speeches. In this context, we opted for the 'tidytext' package within the R programming language.
 
-The initial data preprocessing involved identifying the speech date and president, followed by the removal of special characters, digits, and punctuation marks, as these elements can introduce noise and hinder the analysis, with the exclusion simplifying and focusing the text content. The following step involved structuring the data to prepare it for use to train the machine learning models and also to make predictions from these models.
-Tolkenizaiton is implemented on the data to extract meaningful information. In this paper, each speech is tolkenized by sentence and each sentence is given a unique identity number. This allows us to identify each sentence by its unique number and to which president the sentence was said by. All the characters in the text are converted to lower case. This ensures that the analysis is not case sensitive. Stop words, commonly occurring words that hold not much meaning, are removed: shifting the focus to content-carrying words, enhancing the identification of significant themes and patterns in the SONA speeches. The data is structured in such a way that it can be employed in machine learning models.
-Since the presidents did not have the same number of opportunities to give the SONA, the data is imbalanced, having more sentences belonging to the Presidents were in office for longer. To deal with this, when taking the 80/20 split between the training and test sets, each set was ensured to be balanced among the different presidents. This resulted to having a slightly smaller data set for training the model. 
-The different ways to structure the input data are discussed below. 
+The initial data preprocessing involved identifying the speech date and president, followed by the removal of special characters, digits, and punctuation marks, as these elements can introduce noise and hinder the analysis, with the exclusion simplifying and focusing the text content. The following step involved structuring the data to prepare it for use to train the machine learning models and also to make predictions from these models. Tolkenizaiton is implemented on the data to extract meaningful information. In this paper, each speech is tolkenized by sentence and each sentence is given a unique identity number. This allows us to identify each sentence by its unique number and to which president the sentence was said by. All the characters in the text are converted to lower case. This ensures that the analysis is not case sensitive. Stop words, commonly occurring words that hold not much meaning, are removed: shifting the focus to content-carrying words, enhancing the identification of significant themes and patterns in the SONA speeches. The data is structured in such a way that it can be employed in machine learning models. Since the presidents did not have the same number of opportunities to give the SONA, the data is imbalanced, having more sentences belonging to the Presidents were in office for longer. To deal with this, when taking the 80/20 split between the training and test sets, each set was ensured to be balanced among the different presidents. This resulted to having a slightly smaller data set for training the model. The different ways to structure the input data are discussed below.
 
 ```{r, include=FALSE}
 # Clear global environment
@@ -341,42 +338,27 @@ load("GradientBoosts_all.RData")
 
 ```
 
-#### Bag of words 
+#### Bag of words
+
 BoW is a text representation method that transforms a document or piece of text into a structured format suitable for computational analysis. The core idea behind BoW is to create a "vocabulary" or a set of unique words (or tokens) found in a given corpus of text. Each document in the corpus is then represented as a vector, where the elements of the vector correspond to the frequency or presence of each word in the vocabulary. In this format, the each sentence can be represented in a way that the machine learning models in the classification task for this paper
 
-```{r}
-#| label: tbl-bagofwords
-#| ttbl-cap: Extract of Bag of words structure
-
-kable(bag_of_words[c(1,1200, 2500,7000, 8000),c(1,2,3,5, 20, 30)])
-```
-
 #### Word Embeddings
+
 Word embeddings are essentially numerical vector representations of words, learned through extensive neural network training on vast text corpora. They map words to points in a continuous vector space, where words with similar meanings or usage patterns are positioned closer together. The key advantage of embeddings is their ability to preserve the semantic relationships between words. Embeddings enable neural networks to understand and process text at a more granular level, as opposed to the BoW approach, which simply counts word occurrences
 
-```{r}
-#| label: tbl-embededwords
-#| ttbl-cap: Extract of Embeded words structure containing first six words of the first two sentences made in Mandela's 1994 SONA
-
-kable(cbind(c("Sentence 1", "Sentence 2"),rbind(sequences[[1]][1:6], sequences[[2]][1:6])))
-
-```
-
 #### Term Frequency-Inverse Document Frequency (TF-IDF)
-TF_IDF is a statistical structuring of data method that evaluates the importance of a term within a document relative to its frequency across a collection of documents. The TF-IDF model operates on the principle that words that occur frequently in one document but less frequently in others are indicative of that document's subject matter.  Tf-idf features often give better accuracy in predictive modelling than using word frequencies. 
 
-Term Frequency (TF):
-\begin{equation}
+TF_IDF is a statistical structuring of data method that evaluates the importance of a term within a document relative to its frequency across a collection of documents. The TF-IDF model operates on the principle that words that occur frequently in one document but less frequently in others are indicative of that document's subject matter. Tf-idf features often give better accuracy in predictive modelling than using word frequencies.
+
+Term Frequency (TF): \begin{equation}
 \text{TF}(t, d) = \frac{\text{Number of times term } t \text{ appears in document } d}{\text{Total number of terms in document } d}
 \end{equation}
 
-Inverse Document Frequency (IDF):
-\begin{equation}
+Inverse Document Frequency (IDF): \begin{equation}
 \text{IDF}(t, D) = \log\left(\frac{\text{Total number of documents in the corpus } |D|}{\text{Number of documents containing term } t + 1}\right)
 \end{equation}
 
-TF-IDF:
-\begin{equation}
+TF-IDF: \begin{equation}
 \text{TF-IDF}(t, d, D) = \text{TF}(t, d) \times \text{IDF}(t, D)
 \end{equation}
 
@@ -384,61 +366,67 @@ TF-IDF:
 
 The machine learning models used in the classification problem were Feed-Forward Neural Netowrk, Convolutional Neural Network, Random Forest and Gradient Boosts.
 
-#### Feed forward Neural Network 
-A feedforward neural network, often referred to as a multilayer perceptron (MLP), is a fundamental artificial neural network architecture used for various machine learning and pattern recognition tasks.
-Each neuron in a layer receives input from neurons in the previous layer, applies a weighted sum of these inputs, and then passes the result through an activation function. The activation functions used in the hidden layers was Rectified Linear Units (ReLU) and in the output layer was the softmax which is appropriate for classification tasks. Training a feedforward neural network involves adjusting the weights assigned to each connection between neurons to minimize the difference between the predicted output and the actual target values using Backpropagation and optimization algorithms. 
+#### Feed forward Neural Network
 
+A feedforward neural network, often referred to as a multilayer perceptron (MLP), is a fundamental artificial neural network architecture used for various machine learning and pattern recognition tasks. Each neuron in a layer receives input from neurons in the previous layer, applies a weighted sum of these inputs, and then passes the result through an activation function. The activation functions used in the hidden layers was Rectified Linear Units (ReLU) and in the output layer was the softmax which is appropriate for classification tasks. Training a feedforward neural network involves adjusting the weights assigned to each connection between neurons to minimize the difference between the predicted output and the actual target values using Backpropagation and optimization algorithms.
+
+```{=tex}
 \begin{align*}
 w_{ij}^{(l)} &\leftarrow w_{ij}^{(l)} - \alpha \frac{\partial C}{\partial w_{ij}^{(l)}} \\
 w_{ij}^{(l)} &\text{ is the weight being optimized at layer }l \\
 \alpha &\text{ is the learning rate} \\
 \frac{\partial C}{\partial w_{ij}^{(l)}} &\text{ is the partial derivative of the Cost function being optimized}
 \end{align*}
-
-A learning rate,\alpha, of 0.5 was used and Rectified Linear Units (ReLU) activation in the hidden layer. The softmax activation function was used in the output layer. 
+```
+A learning rate,\alpha, of 0.5 was used and Rectified Linear Units (ReLU) activation in the hidden layer. The softmax activation function was used in the output layer.
 
 #### Convolutional Neural Networks (CNNs)
+
 CNNs consist of multiple layers, including convolutional layers, pooling layers, and fully connected layers. The key innovation in CNNs is the use of convolutional layers, which apply a set of learnable filters (kernels) to input data, extracting spatial features and patterns from the images.Pooling layers reduce the spatial dimensions of the feature maps, effectively down-sampling the data and retaining important information. Fully connected layers process the extracted features to make predictions or classification
 
-The convolution operation applies a filter (kernel) to an input image to produce a feature map. In this equation, I represents the input image, 
-K is the filter (kernel), and denotes the convolution operation.
+The convolution operation applies a filter (kernel) to an input image to produce a feature map. In this equation, I represents the input image, K is the filter (kernel), and denotes the convolution operation.
 
+```{=tex}
 \begin{align*}
 (I * K)(x, y) = \sum_{i} \sum_{j} I(x - i, y - j) * K(i, j)\\
 \text{Max-Pooling}(I)(x, y) = \max_{i, j} I(sx + i, sy + j)
 \end{align*}
-
-In this paper, the learning rate in the dropout layer was tuned. A ReLU activation function was used in the fully connected hidden layer,while a softmax activation was used in the output layer. 
+```
+In this paper, the learning rate in the dropout layer was tuned. A ReLU activation function was used in the fully connected hidden layer,while a softmax activation was used in the output layer.
 
 #### Random Forests
+
 Random Forest works by constructing a forest of decision trees, each trained on a random subset of the data and a random subset of the features. This randomness ensures diversity among the individual trees, making the ensemble less prone to overfitting and more resilient to noise in the data.
 
+```{=tex}
 \begin{align*}
 &\text{Splitting Criteria:} \quad J(D, f) = \sum_{d \in D} \left( p_d \cdot H(y_{d}) - p_{l} \cdot H(y_{l}) - p_{r} \cdot H(y_{r}) \right) \\
 &\text{where} \quad H(y) \text{ is the impurity measure for class } y \\
 &\text{Decision Tree:} \quad f(X) = \sum_{t=1}^{T} I(x \in R_t) \cdot c_t
 \end{align*}
-
-In training the model, this paper performed 5 fold cross-validation across a grid of the hyperparameter that controls the number of features randomly selected at each split when growing a tree. 
+```
+In training the model, this paper performed 5 fold cross-validation across a grid of the hyperparameter that controls the number of features randomly selected at each split when growing a tree.
 
 #### Gradient Boosting Machine (GBMs)
-GBMs fall under the category of ensemble learning, where multiple weak learners (typically decision trees) are combined to form a strong predictive model. Through an iterative process of models,the algorithm used assigns higher weights to the data points that were misclassified or predicted with high error in the previous model. 
 
+GBMs fall under the category of ensemble learning, where multiple weak learners (typically decision trees) are combined to form a strong predictive model. Through an iterative process of models,the algorithm used assigns higher weights to the data points that were misclassified or predicted with high error in the previous model.
+
+```{=tex}
 \begin{align*}
 L(\theta) = \sum_{i=1}^{n} l(y_i, F(x_i, \theta)) + \Omega(\theta)
 \end{align*}
-
-Here, $l$ is the loss function, $F(x_i, \theta)$ is the current model's prediction, and $\Omega(\theta)$ represents a regularization term to prevent overfitting. 
+```
+Here, $l$ is the loss function, $F(x_i, \theta)$ is the current model's prediction, and $\Omega(\theta)$ represents a regularization term to prevent overfitting.
 
 $$
 \theta_{t+1} = \theta_t - \nu \nabla L(\theta_t)\\F(x) = \sum_{t=1}^{T} F_t(x)
 $$
 
-The final prediction, $F(x)$, is the summation of predictions from each boosting iteration. In this paper, we perform a grid search over the learning rate,$\nu$,(0.01,0.0005, 0.0001) and the number of trees (100, 200, 500) to be included in each ensemble, $T$. These hyper parameters are tuned and 5-fold cross validation is carried out with each iteration. The hyperparemters that produce the lowest cross validation error is used to fit the final model. 
+The final prediction, $F(x)$, is the summation of predictions from each boosting iteration. In this paper, we perform a grid search over the learning rate,$\nu$,(0.01,0.0005, 0.0001) and the number of trees (100, 200, 500) to be included in each ensemble, $T$. These hyper parameters are tuned and 5-fold cross validation is carried out with each iteration. The hyperparemters that produce the lowest cross validation error is used to fit the final model.
 
-## Results 
+## Results
 
-The training set was used to train the different models and the test set was used to make predictions. 
+The training set was used to train the different models and the test set was used to make predictions.
 
 ```{r}
 #|label: tbl-accuracy
@@ -488,15 +476,14 @@ kable(round(gbm_all[[3]]$byClass[,c(1,2,5,6,7)],4))
 
 ```
 
-Table @tbl-clssaloc, Table @tbl-rfmetrics, and Table @tbl-gbmmetrics help us to analyze the performance of the predictions for each of the presidents in when random forests and GMB were implemented. It can be seen by the F1-score in both models perform bes  in terms of classifying instances where the sentences belonging and not belonging to President Ramaphosa. Notably, in both Table @tbl-rfmetrics and Table @tbl-gbmmetrics the sensitivity for predicting sentences made by De-Klerk and Mothlane were very low while specficity was close to 1 for both of them in the two methods. This shows that the models performed poorly at classifying sentences that belonged to the two presidents. 
+Table @tbl-clssaloc, Table @tbl-rfmetrics, and Table @tbl-gbmmetrics help us to analyze the performance of the predictions for each of the presidents in when random forests and GMB were implemented. It can be seen by the F1-score in both models perform bes in terms of classifying instances where the sentences belonging and not belonging to President Ramaphosa. Notably, in both Table @tbl-rfmetrics and Table @tbl-gbmmetrics the sensitivity for predicting sentences made by De-Klerk and Mothlane were very low while specficity was close to 1 for both of them in the two methods. This shows that the models performed poorly at classifying sentences that belonged to the two presidents.
 
-## Conclusion 
+## Conclusion
 
-This paper studied the State of the Nation Addresses made by the previous six South African Presidents. Natural Language Processing (NLP) models were used to make predictions to classify sentences according to which president was the source of the sentence. The sentences were structured using the Bag of Words method. Feed Forward Neural networks performed best in terms of test accuracy, having a test accuracy of just around 0.5. 
-Further studies could explore structuring the data as Term Frequency-Inverse Document Frequency format in order to obtain better predictions. This was not done in this paper due to computational limitations. 
-Text mining and NLP can have very useful potential in speech classification,and reveal insights in the world of political communication.
+This paper studied the State of the Nation Addresses made by the previous six South African Presidents. Natural Language Processing (NLP) models were used to make predictions to classify sentences according to which president was the source of the sentence. The sentences were structured using the Bag of Words method. Feed Forward Neural networks performed best in terms of test accuracy, having a test accuracy of just around 0.5. Further studies could explore structuring the data as Term Frequency-Inverse Document Frequency format in order to obtain better predictions. This was not done in this paper due to computational limitations. Text mining and NLP can have very useful potential in speech classification,and reveal insights in the world of political communication.
 
 \newpage
+
 ### References
 
 ::: {#refs}
