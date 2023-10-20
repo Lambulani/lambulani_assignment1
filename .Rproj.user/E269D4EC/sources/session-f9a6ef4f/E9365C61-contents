@@ -33,7 +33,7 @@ The initial data preprocessing involved identifying the speech date and presiden
 # Clear global environment
 rm(list=ls())
 # Libraries we need
-libs <- c('dplyr', 'ggplot2', 'lubridate', 'purrr', 'reshape2', 'stringr', 'text2vec', 'tidyr', 'tidytext', 'topicmodels', 'tm', 'wordcloud', "kableExtra", "keras", "tensorflow", "rpart", "randomForest", "gbm", "caret")
+libs <- c('dplyr', 'ggplot2', 'lubridate', 'purrr', 'reshape2', 'stringr', 'text2vec', 'tidyr', 'tidytext', 'topicmodels', 'tm', 'wordcloud', "kableExtra", "keras", "tensorflow", "rpart", "randomForest", "gbm", "caret", "kableExtra")
 # Install missing libraries
 installed_libs <- libs %in% rownames(installed.packages())
 if (any(installed_libs == FALSE)) {
@@ -429,9 +429,6 @@ The final prediction, $F(x)$, is the summation of predictions from each boosting
 The training set was used to train the different models and the test set was used to make predictions.
 
 ```{r}
-#|label: tbl-accuracy
-#|ttbl-cap: Accuracy on test data in each Machine Learning models employed
-
 model_accuracies<- round(c(NN_results[[2]], NN_embedding_results[[2]],
                      CNN_embedding_results[[2]],
                      rf_data[[3]]$overall[["Accuracy"]],
@@ -443,6 +440,12 @@ model_names<- c("Feed Forward Neural Network (Bag of Words structure)",
                 "Convolutional Neural Nework (Embeded Words structure)",
                 "Random Forest",
                 "Gradient Boost Machine")
+
+```
+
+```{r}
+#|label: tbl-accuracy
+#|tbl-cap: Accuracy on test data in each Machine Learning models employed
 
 kable(cbind(model_names, model_accuracies), col.names = c("Model", "Test Accuracy"))
 
@@ -457,7 +460,7 @@ kable(cbind(model_names, model_accuracies), col.names = c("Model", "Test Accurac
 pres<- c("De Klerk", "Mandela", "Mbeki", "Mothlane", "Zuma", "Ramaphosa")
 clss<- c("Class 0", "Class 1","Class 2","Class 3","Class 4","Class 5")
 
-kable(rbind(clss,pres))
+kable(cbind(c("class", "president"),rbind(clss,pres)))
 ```
 
 ```{r}

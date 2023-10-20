@@ -3,7 +3,7 @@
     "path": "~/Masters Data Science - 1st Year/DS4I/Assignment 1/lambulani_assignment1/bndlev001Assignment1/Assignment1.qmd",
     "project_path": "Assignment1.qmd",
     "type": "quarto_markdown",
-    "hash": "0",
+    "hash": "1371005387",
     "contents": "",
     "dirty": false,
     "created": 1697798934040.0,
@@ -14,18 +14,18 @@
         "rmdVisualWrapConfigured": "true",
         "source_window_id": "",
         "Source": "Source",
-        "docOutlineVisible": "1",
+        "docOutlineVisible": "0",
         "rmdVisualCollapsedChunks": "",
         "rmdVisualModeLocation": "238:40.53333282470703",
-        "cursorPosition": "12,0",
-        "scrollLine": "3"
+        "cursorPosition": "442,0",
+        "scrollLine": "432"
     },
     "folds": "",
-    "lastKnownWriteTime": 1697799754,
+    "lastKnownWriteTime": 1697801226,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1697799754867,
+    "last_content_update": 1697801226447,
     "read_only": false,
     "read_only_alternatives": []
 }

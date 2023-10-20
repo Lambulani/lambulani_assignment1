@@ -4,11 +4,11 @@ project:
   
 
 website:
-  title: "bndlev001Assignment1"
+  title: "SONA South Africa"
   navbar:
     left:
       - href: Assignment1.qmd
-        text: Assignment 
+        text: Content
 
 format:
   html:
