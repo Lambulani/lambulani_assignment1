@@ -1,12 +1,14 @@
 project:
   type: website
+  output-dir: docs
+  
 
 website:
   title: "bndlev001Assignment1"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
+      - href: Assignment1.qmd
+        text: Assignment 
       - about.qmd
 
 format:

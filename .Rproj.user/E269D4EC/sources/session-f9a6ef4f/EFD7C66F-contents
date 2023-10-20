@@ -8,7 +8,7 @@ website:
   navbar:
     left:
       - href: Assignment1.qmd
-        text: Home
+        text: Assignment 
       - about.qmd
 
 format:

@@ -3,24 +3,24 @@
     "path": "~/Masters Data Science - 1st Year/DS4I/Assignment 1/lambulani_assignment1/bndlev001Assignment1/_quarto.yml",
     "project_path": "_quarto.yml",
     "type": "yaml",
-    "hash": "0",
+    "hash": "3740240798",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1697798808531.0,
     "source_on_save": false,
     "relative_order": 2,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "9,25",
-        "scrollLine": "0"
+        "cursorPosition": "10,25",
+        "scrollLine": "2"
     },
     "folds": "",
-    "lastKnownWriteTime": 1697798343,
+    "lastKnownWriteTime": 1697799854,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1697799032768,
+    "last_content_update": 1697799854038,
     "read_only": false,
     "read_only_alternatives": []
 }

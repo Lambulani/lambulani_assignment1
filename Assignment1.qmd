@@ -448,7 +448,7 @@ kable(cbind(model_names, model_accuracies), col.names = c("Model", "Test Accurac
 
 ```
 
-Table @tbl-accuracy shows the prediction accuracy of each of the models on the test set. It is seen that the standard feed forward neural network with embeded words structure performed the best on the test set having a test accuracy of around 0.5 which is slightly higher than the prediction accuracy of the CNN.
+@tbl-accuracy shows the prediction accuracy of each of the models on the test set. It is seen that the standard feed forward neural network with embeded words structure performed the best on the test set having a test accuracy of around 0.5 which is slightly higher than the prediction accuracy of the CNN.
 
 ```{r}
 #| label: tbl-clssaloc
@@ -476,7 +476,7 @@ kable(round(gbm_all[[3]]$byClass[,c(1,2,5,6,7)],4))
 
 ```
 
-Table @tbl-clssaloc, Table @tbl-rfmetrics, and Table @tbl-gbmmetrics help us to analyze the performance of the predictions for each of the presidents in when random forests and GMB were implemented. It can be seen by the F1-score in both models perform bes in terms of classifying instances where the sentences belonging and not belonging to President Ramaphosa. Notably, in both Table @tbl-rfmetrics and Table @tbl-gbmmetrics the sensitivity for predicting sentences made by De-Klerk and Mothlane were very low while specficity was close to 1 for both of them in the two methods. This shows that the models performed poorly at classifying sentences that belonged to the two presidents.
+@tbl-clssaloc,  @tbl-rfmetrics, and @tbl-gbmmetrics help us to analyze the performance of the predictions for each of the presidents in when random forests and GMB were implemented. It can be seen by the F1-score in both models perform bes in terms of classifying instances where the sentences belonging and not belonging to President Ramaphosa. Notably, in both @tbl-rfmetrics and @tbl-gbmmetrics the sensitivity for predicting sentences made by De-Klerk and Mothlane were very low while specficity was close to 1 for both of them in the two methods. This shows that the models performed poorly at classifying sentences that belonged to the two presidents.
 
 ## Conclusion
 
